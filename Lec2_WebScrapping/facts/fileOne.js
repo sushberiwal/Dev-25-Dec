@@ -1,7 +1,13 @@
-// object destructuring
+let fs = require("fs");
+let obj = {
+    name:"steve",
+    movies:["the winter soldier"]
+}
 
-const {two} = require("./fileTwo");
 
-let valueOne = "I am value of file one";
+fs.writeFileSync("./data.json" , JSON.stringify(obj));
 
-console.log(two);
+
+
+
+

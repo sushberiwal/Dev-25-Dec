@@ -23,6 +23,6 @@ function parseData(html){
     let link = ch(".widget-items.cta-link a").attr("href");
     // let completeLink = "https://www.espncricinfo.com"+link;
     let completeLink = `https://www.espncricinfo.com${link}`;
-    console.log(completeLink);
+    // console.log(completeLink);
     getAllMatches(completeLink);
 }
