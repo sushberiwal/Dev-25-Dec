@@ -3,13 +3,20 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 
 let leaderboard = [];
-
+let count = 0;
 
 function getMatch(link){
+    console.log("Sending Request " , count);
     request(link,cb);
+    count++;
 }
 function cb(error , response , data){
+    count--;
+    console.log("Receved Data " , count);
     parseData(data);
+    if(count==0){
+        console.table(leaderboard);
+    }
 }
 function parseData(data){ 
     // console.log(data);
