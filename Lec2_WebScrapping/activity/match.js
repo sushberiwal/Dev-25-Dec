@@ -2,20 +2,15 @@ const request = require("request");
 const cheerio = require("cheerio");
 const fs = require("fs");
 
-
 function getMatch(link){
     request(link,cb);
 }
-
 
 function cb(error , response , data){
     parseData(data);
 }
 
-
-
-function parseData(data){
-    
+function parseData(data){ 
     // console.log(data);
     let ch = cheerio.load(data);
     let bothInnings = ch('.match-scorecard-page .Collapsible');
