@@ -25,12 +25,14 @@ function parseData(html){
     let allATags = ch('a[data-hover="Scorecard"]');
     // [ <a   /> , <a    /> , <a    /> , <a    /> , <a    /> , <a    /> , <a    /> , <a    /> ];
     // console.log(allATags.length);
+    
     for(let i=0 ; i<allATags.length ; i++){
         let link = ch(allATags[i]).attr("href");
         let completeLink = `https://www.espncricinfo.com${link}`;
         // console.log(completeLink);
         getMatch(completeLink);
     }
+    
     //?????????????
 }
 
