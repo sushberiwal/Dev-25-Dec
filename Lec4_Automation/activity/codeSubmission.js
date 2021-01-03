@@ -38,5 +38,27 @@ browserOpenPromise
       return loginPromise;
   })
   .then(function(){
-      console.log("Logged in !!");
+      let waitPromise = tab.waitForSelector('#base-card-1-link' , {visible:true}); // 30sec wait
+      return waitPromise;
   })
+  .then(function(){
+    //   console.log("Logged in !!");
+    let ipKitClickedPromise = tab.click('#base-card-1-link');
+    return ipKitClickedPromise;
+  })
+  .then(function(){
+    let waitPromise = tab.waitForSelector('a[data-attr1="warmup"]' , {visible:true}); // 30sec wait
+    return waitPromise;
+  })
+  .then(function(){
+    //   console.log("Logged in !!");
+    let warmpClickedPromise = tab.click('a[data-attr1="warmup"]');
+    return warmpClickedPromise;
+  })
+  .then(function(){
+      console.log("warmup page opened !!");
+  })
+  .catch(function(error){
+      console.log(error);
+  })
+
