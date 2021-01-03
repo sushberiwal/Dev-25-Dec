@@ -11,6 +11,7 @@ console.log(f1KaPromise);
 // scb => success callback
 f1KaPromise.then(function(data){
     console.log("Inside scb");
+    console.log(f1KaPromise);
     console.log(data+"");
 });
 
@@ -18,6 +19,7 @@ f1KaPromise.then(function(data){
 // fcb => failed callback
 f1KaPromise.catch(function(error){
     console.log("Inside fcb");
+    console.log(f1KaPromise);
     console.log(error);
 });
 
